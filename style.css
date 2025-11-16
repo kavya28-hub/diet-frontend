@@ -1,0 +1,77 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+.info-card {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid #00ff66;
+  box-shadow: 0 5px 25px 3px rgba(0, 255, 100, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  padding-top: 1.5rem;
+}
+.info-card img {
+  height: 80px;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(2px 4px 4px #003b1a);
+}
+.info-card:hover img {
+  transform: scale(1.12) rotate(-6deg);
+  filter: drop-shadow(0 0 15px #00ff6655);
+}
+.hero-section {
+  min-height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 50, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1470&q=80')
+      center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid #00ff99;
+  border-radius: 12px;
+}
+form input,
+form select {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #00cc44;
+  color: #fff;
+}
+form input:focus,
+form select:focus {
+  border-color: #00ff66;
+  box-shadow: 0 0 10px #00ff66;
+}
+.btn-success {
+  background: linear-gradient(90deg, #00e65b, #09ed9a);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.btn-success:hover {
+  background: #09e678;
+  color: #fff;
+}
+.form-img-icon {
+  height: 36px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+footer {
+  font-size: 0.95rem;
+  padding: 1rem 0 0.4rem 0;
+  background: #0a0;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  margin-top: 50px;
+}

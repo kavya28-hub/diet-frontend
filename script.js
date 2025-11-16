@@ -1,3 +1,8 @@
+// 🔐 Protect Diet Page
+if (!localStorage.getItem("token")) {
+  window.location.href = "login.html";
+}
+
 document.getElementById("dietForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
@@ -29,7 +34,6 @@ document.getElementById("dietForm").addEventListener("submit", async function (e
     });
 
     const data = await res.json();
-
     const r = data.recommendation;
 
     document.getElementById("result").innerHTML = `
@@ -50,5 +54,7 @@ document.getElementById("dietForm").addEventListener("submit", async function (e
     `;
   }
 });
+
+
 
 

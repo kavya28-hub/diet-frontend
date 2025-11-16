@@ -22,7 +22,7 @@ document.getElementById("dietForm").addEventListener("submit", async function (e
   `;
 
   try {
-    const res = await fetch("http://localhost:5000/api/recommend", {
+    const res = await fetch("https://diet-backend-3.onrender.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
@@ -50,3 +50,4 @@ document.getElementById("dietForm").addEventListener("submit", async function (e
     `;
   }
 });
+

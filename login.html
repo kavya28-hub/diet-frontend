@@ -35,36 +35,23 @@
   </div>
 
 <script>
-async function login() {
-
+function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("https://diet-backend-3.onrender.com/auth/login", {
-
-    method: "POST",
-    headers: { "Content-Type":"application/json" },
-    body: JSON.stringify({ email, password })
-  });
-
-  const data = await res.json();
-
-  console.log(data); // DEBUG
-
-  if (data.token) {
-    alert("Login successful!");
-
-    // Save the token
-    localStorage.setItem("token", data.token);
-
-    // Redirect to main app
-    window.location.href = "index.html";
-  } else {
-    alert(data.error || "Login failed");
+  // Simple front-end only check (NO backend)
+  if (!email || !password) {
+    alert("Please enter email and password");
+    return;
   }
+
+  // Login successful — no backend required
+  alert("Login successful!");
+  window.location.href = "index.html"; // Redirect to main diet page
 }
 </script>
 
 </body>
 </html>
+
 

@@ -41,23 +41,29 @@ async function login() {
   const password = document.getElementById("password").value;
 
   const res = await fetch("https://diet-backend-3.onrender.com/api/auth/login", {
-
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body:JSON.stringify({ email, password })
+    method: "POST",
+    headers: { "Content-Type":"application/json" },
+    body: JSON.stringify({ email, password })
   });
 
   const data = await res.json();
 
-  if (data.success) {
+  console.log(data); // DEBUG
+
+  if (data.token) {
     alert("Login successful!");
+
+    // Save the token
     localStorage.setItem("token", data.token);
-    window.location.href = "index.html";  // redirect to main page
+
+    // Redirect to main app
+    window.location.href = "index.html";
   } else {
-    alert(data.error);
+    alert(data.error || "Login failed");
   }
 }
 </script>
 
 </body>
 </html>
+

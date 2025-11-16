@@ -36,25 +36,21 @@
   </div>
 
 <script>
-async function signup() {
+function signup() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("https://diet-backend-3.onrender.com/auth/signup", {
-
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body:JSON.stringify({ name, email, password })
-  });
-
-  const data = await res.json();
-  if(data.success) {
-    alert("Signup successful!");
-    window.location.href = "login.html";
-  } else {
-    alert(data.error);
+  if (!name || !email || !password) {
+    alert("Please fill all fields");
+    return;
   }
+
+  // Store user locally (no backend)
+  localStorage.setItem("user", JSON.stringify({ name, email, password }));
+
+  alert("Signup successful!");
+  window.location.href = "login.html"; // redirect to login
 }
 </script>
 
